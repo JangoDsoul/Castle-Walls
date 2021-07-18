@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--============= Castle Building Base =================-->
+
+  <ThingDef  Name="CaslteBase" ParentName="BuildingBase" Abstract="True">
+    <designationCategory>Structure</designationCategory>
+    <passability>Impassable</passability>
+    <pathCost>0</pathCost>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Stony</li>
+    </stuffCategories>
+    <costStuffCount>200</costStuffCount>
+    <fertility>0</fertility>
+    <researchPrerequisites>
+      <li>Stonecutting</li>
+    </researchPrerequisites>
+    <building>
+      <isInert>true</isInert>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <drawOffset>(0,0,0.4)</drawOffset>
+      <drawRotated>true</drawRotated>
+      <shadowData>
+        <volume>(0.3, 0.5, 0.3)</volume>
+        <offset>(0,0,-0.23)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <canOverlapZones>false</canOverlapZones>
+	<size>(2,2)</size>
+    <!--uiIconPath>RWEmbrasureIcon</uiIconPath-->
+	<defaultPlacingRot>South</defaultPlacingRot>
+  </ThingDef>
+
+	<!--==============================================
+	================ Castle Walls ===================
+	===============================================-->
+
+  <ThingDef ParentName="CaslteBase">
+    <defName>JDS_WallsTwo</defName>
+    <label>Castle Walls 1x2</label>
+    <description>Medieval builders used a number of techniques to strengthen walls, for example building them thicker at the base to prevent undermining, and cutting the stones in such a way as to be able to withstand high impact projectiles</description>
+    <altitudeLayer>Building</altitudeLayer>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <costStuffCount>100</costStuffCount>
+    <statBases>
+      <Mass>200</Mass>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Beauty>5</Beauty>
+    </statBases>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Walltwo</texPath>
+    </graphicData>
+	<size>(1,2)</size>
+  </ThingDef>
+
+	<!--==============================================
+	================ Castle Walls ===================
+	===============================================-->
+
+  <ThingDef ParentName="CaslteBase">
+    <defName>JDS_Walls</defName>
+    <label>Castle Walls 2x2</label>
+    <description>Medieval builders used a number of techniques to strengthen walls, for example building them thicker at the base to prevent undermining, and cutting the stones in such a way as to be able to withstand high impact projectiles</description>
+    <altitudeLayer>Building</altitudeLayer>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <statBases>
+      <Mass>200</Mass>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Beauty>5</Beauty>
+    </statBases>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Wall</texPath>
+    </graphicData>
+  </ThingDef>
+
+
+	<!--==============================================
+	=========== Castle Walls Embrasure ==============
+	===============================================-->
+
+  <ThingDef ParentName="CaslteBase">
+    <defName>JDS_Walls_Embrasure</defName>
+    <label>Castle Walls Embrasure</label>
+    <description>The term embrasure, in military architecture, refers to the opening in a crenellation or battlement between the two raised solid portions or merlons, sometimes called a crenel or crenelle. The purpose of embrasures is to allow weapons to be fired out from the fortification while the firer remains under cover.</description>
+    <altitudeLayer>Building</altitudeLayer>
+    <blockWind>false</blockWind>
+    <fillPercent>0.6</fillPercent>
+    <statBases>
+      <Mass>200</Mass>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Beauty>5</Beauty>
+    </statBases>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Wall_Embrasure</texPath>
+    </graphicData>
+  </ThingDef>
+
+	<!--==============================================
+	=========== Castle Walls Embrasure ==============
+	===============================================-->
+
+  <ThingDef ParentName="CaslteBase">
+    <defName>JDS_Walls_End</defName>
+    <label>Castle Walls End</label>
+    <description>Medieval builders used a number of techniques to strengthen walls, for example building them thicker at the base to prevent undermining, and cutting the stones in such a way as to be able to withstand high impact projectiles</description>
+    <designationCategory>Structure</designationCategory>
+    <altitudeLayer>Building</altitudeLayer>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <statBases>
+      <Mass>200</Mass>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Beauty>5</Beauty>
+    </statBases>
+    <costStuffCount>150</costStuffCount>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Wall_End</texPath>
+    </graphicData>
+  </ThingDef>
+
+ 	<!--==============================================
+	========== Castle Walls L connector =============
+	===============================================-->
+
+  <ThingDef ParentName="CaslteBase">
+    <defName>JDS_Walls_L_connector</defName>
+    <label>Castle Walls L connector</label>
+    <description>Medieval builders used a number of techniques to strengthen walls, for example building them thicker at the base to prevent undermining, and cutting the stones in such a way as to be able to withstand high impact projectiles</description>
+    <altitudeLayer>Building</altitudeLayer>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <pathCost>0</pathCost>
+    <statBases>
+      <Mass>200</Mass>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Beauty>5</Beauty>
+    </statBases>
+    <canOverlapZones>false</canOverlapZones>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Wall_L_connector</texPath>
+    </graphicData>
+  </ThingDef>
+
+ 	<!--==============================================
+	========== Castle Walls T connector =============
+	===============================================-->
+
+  <ThingDef ParentName="CaslteBase">
+    <defName>JDS_Walls_T_connector</defName>
+    <label>Castle Walls T connector</label>
+    <description>Medieval builders used a number of techniques to strengthen walls, for example building them thicker at the base to prevent undermining, and cutting the stones in such a way as to be able to withstand high impact projectiles</description>
+    <altitudeLayer>Building</altitudeLayer>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <statBases>
+      <Mass>200</Mass>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Beauty>5</Beauty>
+    </statBases>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Wall_T_connector</texPath>
+    </graphicData>
+  </ThingDef>
+
+ 	<!--==============================================
+	========== Castle Walls X connector =============
+	===============================================-->
+
+  <ThingDef ParentName="CaslteBase">
+    <defName>JDS_Wall_X_connector</defName>
+    <label>Castle Wall X connector</label>
+    <description>Medieval builders used a number of techniques to strengthen walls, for example building them thicker at the base to prevent undermining, and cutting the stones in such a way as to be able to withstand high impact projectiles</description>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <statBases>
+      <Mass>200</Mass>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Beauty>5</Beauty>
+    </statBases>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Things/Wall_X_connector</texPath>
+    </graphicData>
+  </ThingDef>
+
+ 	<!--==============================================
+	================ Castle Tower ===================
+	===============================================-->
+
+  <ThingDef ParentName="CaslteBase">
+    <defName>JDS_Tower</defName>
+    <label>Castle Tower</label>
+    <description>Medieval builders used a number of techniques to strengthen walls, for example building them thicker at the base to prevent undermining, and cutting the stones in such a way as to be able to withstand high impact projectiles</description>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <blockWind>true</blockWind>
+    <statBases>
+      <Mass>200</Mass>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Beauty>5</Beauty>
+    </statBases>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Things/Tower</texPath>
+    </graphicData>
+  </ThingDef>
+
+ 	<!--==============================================
+	=========== Castle Tower connector ==============
+	===============================================-->
+
+  <ThingDef ParentName="CaslteBase">
+    <defName>JDS_Tower_connector</defName>
+    <label>Castle Tower connector</label>
+    <description>Medieval builders used a number of techniques to strengthen walls, for example building them thicker at the base to prevent undermining, and cutting the stones in such a way as to be able to withstand high impact projectiles</description>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <pathCost>0</pathCost>
+    <statBases>
+      <Mass>200</Mass>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Beauty>5</Beauty>
+    </statBases>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Tower_connector</texPath>
+      <drawOffset>(0,0,0.2)</drawOffset>
+    </graphicData>
+  </ThingDef>
+
+ 	<!--==============================================
+	========== Castle Tower I connector =============
+	===============================================-->
+
+   <ThingDef ParentName="CaslteBase">
+    <defName>JDS_Tower_I_connector</defName>
+    <label>Castle Tower I connector</label>
+    <description>Medieval builders used a number of techniques to strengthen walls, for example building them thicker at the base to prevent undermining, and cutting the stones in such a way as to be able to withstand high impact projectiles</description>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <statBases>
+      <Mass>200</Mass>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Beauty>5</Beauty>
+    </statBases>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Tower_I_connector</texPath>
+      <drawOffset>(0,0,0.2)</drawOffset>
+    </graphicData>
+  </ThingDef>
+
+ 	<!--==============================================
+	========== Castle Tower T connector =============
+	===============================================-->
+
+  <ThingDef ParentName="CaslteBase">
+    <defName>JDS_Tower_T_connector</defName>
+    <label>Castle Tower T connector</label>
+    <description>Medieval builders used a number of techniques to strengthen walls, for example building them thicker at the base to prevent undermining, and cutting the stones in such a way as to be able to withstand high impact projectiles</description>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <pathCost>0</pathCost>
+    <statBases>
+      <Mass>200</Mass>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Beauty>5</Beauty>
+    </statBases>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Tower_T_connector</texPath>
+      <drawOffset>(0,0,0.2)</drawOffset>
+    </graphicData>
+  </ThingDef>
+
+ 	<!--==============================================
+	========== Castle Tower L connector =============
+	===============================================-->
+
+  <ThingDef ParentName="CaslteBase">
+    <defName>JDS_Tower_L_connector</defName>
+    <label>Castle Tower L connector</label>
+    <description>Medieval builders used a number of techniques to strengthen walls, for example building them thicker at the base to prevent undermining, and cutting the stones in such a way as to be able to withstand high impact projectiles</description>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <pathCost>0</pathCost>
+    <statBases>
+      <Mass>200</Mass>
+      <MaxHitPoints>1200</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Beauty>5</Beauty>
+    </statBases>
+    <rotatable>true</rotatable>
+    <graphicData>
+      <texPath>Things/Tower_L_connector</texPath>
+      <drawOffset>(0,0,0.2)</drawOffset>
+    </graphicData>
+  </ThingDef>
+
+</Defs>

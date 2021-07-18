@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+	<ModMetaData>
+	  <name>[JDS] Castle Walls</name>
+	  <author>JangoD'soul</author>
+	  <supportedVersions>
+		<li>1.2</li>			
+	  </supportedVersions>
+	  <packageId>JangoDsoul.CastleWalls</packageId>
+	  <description>
+[img]https://i.imgur.com/p7Fv1Z6.gif[/img]	
+		
+This mod adds Castle walls	
+[img]https://i.imgur.com/sdod9BV.png[/img]
+[img]https://i.imgur.com/SvYOgbu.png[/img]
+[img]https://i.imgur.com/V70kd15.png[/img]
+[img]https://i.imgur.com/e5Kb4Rx.png[/img]
+[img]https://i.imgur.com/H6x7So0.png[/img]	
+[img]https://i.imgur.com/bRWSNJV.png[/img]
+Q: Why are the Castle walls all separated building? 
+A: By the nature of what i wanted, a wall that bigger then the regular one but i can't utility the walls code it all for 1x1 
+[h1]---------------------------------------------------[/h1]
+Q: Are we getting walkable parapets?
+A: No
+[h1]---------------------------------------------------[/h1]
+Q: Will we be able to place archer pawns on the towers and walls??
+A: Right now i'm unable to do so, until i make it fully  module which is not anytime soon.
+[h1]---------------------------------------------------[/h1]
+Q: CE Compatible?
+A: No, Find someone to patch it
+	  </description>
+	  <modDependencies>
+		<li>
+		  <displayName>Doors Expanded (Dev)</displayName>			
+		  <packageId>jecrell.doorsexpanded</packageId>
+		  <steamWorkshopUrl>steam://url/CommunityFilePage/2195733555</steamWorkshopUrl>
+		</li>
+	  </modDependencies>
+<!--  <loadBefore>
+	    <li>ModderName.ModSeries.ModName</li>
+	  </loadBefore> -->	
+	  <loadAfter>
+		<li>jecrell.doorsexpanded</li>
+	  </loadAfter>		
+	</ModMetaData>

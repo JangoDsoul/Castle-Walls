@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--============= Castle Defend Building Base =================-->
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Defend_Tower_Arrow</defName>
+    <label>greatbow arrow</label>
+    <graphicData>
+      <texPath>Things/Projectile/Arrow_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Arrow</damageDef>
+      <damageAmountBase>17</damageAmountBase>
+      <stoppingPower>1.5</stoppingPower>
+      <armorPenetrationBase>0.15</armorPenetrationBase>
+      <speed>49</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>Defend_Tower_GreatBow</defName>
+    <label>Defend Tower GreatBow</label>
+    <description>A simple automatic gun made to be mounted on a turret.</description>
+    <graphicData>
+      <texPath>Things/Tower_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.65</AccuracyTouch>
+      <AccuracyShort>0.85</AccuracyShort>
+      <AccuracyMedium>0.75</AccuracyMedium>
+      <AccuracyLong>0.50</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>200</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Defend_Tower_Arrow</defaultProjectile>
+        <warmupTime>1.35</warmupTime>
+        <range>29.9</range>
+        <ticksBetweenBurstShots>0</ticksBetweenBurstShots> 
+        <burstShotCount>3</burstShotCount>
+        <soundCast>Bow_Large</soundCast>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef Name="CaslteDefendsBase" ParentName="BuildingBase" Abstract="True">
+     <description>Defense towers, also known as mural towers, provide flanking fire (from crossbows or other projectile weapons) to a straight part of the curtain wall.</description>   
+    <thingClass>Building_TurretGun</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>	
+      <drawSize>(3,3)</drawSize>
+      <drawOffset>(0,0,0.2)</drawOffset>
+      <drawRotated>true</drawRotated>	  
+      <shadowData>
+        <volume>(0.3, 0.5, 0.3)</volume>
+        <offset>(0,0,-0.23)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <!--uiIconPath>Things/Building/Security/TurretMini_MenuIcon</uiIconPath-->
+    <!--uiIconScale>0.90</uiIconScale-->
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+    <thingCategories>
+      <li>BuildingsSecurity</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>1500</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Mass>200</Mass>
+      <Beauty>10</Beauty>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Refuelable">
+        <fuelLabel>Shots until Arrow change</fuelLabel>
+        <fuelGizmoLabel>Bow durability</fuelGizmoLabel>
+        <outOfFuelMessage>Cannot shoot: Needs new Arrow</outOfFuelMessage>
+        <fuelFilter><thingDefs><li>Steel</li></thingDefs></fuelFilter>
+        <fuelCapacity>100</fuelCapacity>       <!-- 30 bursts -->
+        <fuelMultiplier>0.75</fuelMultiplier> <!-- 1.333 steel per burst, 80 per full rearm -->
+        <initialFuelPercent>1</initialFuelPercent>
+        <autoRefuelPercent>0.5</autoRefuelPercent>
+        <showFuelGizmo>true</showFuelGizmo>
+        <minimumFueledThreshold>1</minimumFueledThreshold>
+        <factorByDifficulty>true</factorByDifficulty>
+        <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+        <fuelIconPath>UI/Overlays/Barrel</fuelIconPath>
+      </li>
+    </comps>
+    <passability>Impassable</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>1</fillPercent>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Stony</li>	  
+    </stuffCategories>
+    <costStuffCount>250</costStuffCount>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <building>
+      <combatPower>45</combatPower>   <!-- same as a scavenger -->
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Defend_Tower_GreatBow</turretGunDef>
+      <turretBurstCooldownTime>4.8</turretBurstCooldownTime>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+    <designationHotKey>Misc2</designationHotKey>
+    <researchPrerequisites>
+      <li>Stonecutting</li>
+    </researchPrerequisites>
+	<size>(2,2)</size>	
+  </ThingDef>
+
+	<!--==============================================
+	============ Defend Tower Connector ==============
+	===============================================-->	
+
+  <ThingDef ParentName="CaslteDefendsBase" >
+    <defName>JDS_Defense_Tower</defName>
+    <label>Defense Tower Connector</label>
+    <graphicData>
+      <texPath>Things/Defend_Tower/Defense_Tower_connector</texPath>
+    </graphicData>
+  </ThingDef>
+
+	<!--==============================================
+	========== Defend Tower I Connector ==============
+	===============================================-->	
+
+  <ThingDef ParentName="CaslteDefendsBase" >
+    <defName>JDS_I_Defense_Tower</defName>
+    <label> Defense Tower I Connector</label>
+    <graphicData>
+      <texPath>Things/Defend_Tower/Defense_Tower_I_connector</texPath>
+    </graphicData>
+  </ThingDef>
+
+	<!--==============================================
+	========== Defend Tower L Connector ==============
+	===============================================-->	
+
+  <ThingDef ParentName="CaslteDefendsBase" >
+    <defName>JDS_L_Defense_Tower</defName>
+    <label> Defense Tower L Connector</label>
+    <graphicData>
+      <texPath>Things/Defend_Tower/Defense_Tower_L_connector</texPath>
+    </graphicData>
+  </ThingDef>
+
+	<!--==============================================
+	========== Defend Tower T Connector ==============
+	===============================================-->	
+
+  <ThingDef ParentName="CaslteDefendsBase" >
+    <defName>JDS_T_Defense_Tower</defName>
+    <label> Defense Tower T Connector</label>
+    <graphicData>
+      <texPath>Things/Defend_Tower/Defense_Tower_T_connector</texPath>
+    </graphicData>
+  </ThingDef>
+
+</Defs>

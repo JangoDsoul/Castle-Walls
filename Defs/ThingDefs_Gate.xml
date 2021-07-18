@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="HeronMetalDoorBase">
+    <defName>JDS_Castle_Gate</defName>
+	  <label>Castle Gate</label>
+	  <description>Its a strong, fortified building positioned to defend the entrance to a castle</description>  
+    <statBases>
+      <Mass>200</Mass>
+      <MaxHitPoints>2000</MaxHitPoints>
+      <WorkToBuild>8000</WorkToBuild>
+      <DoorOpenSpeed>0.25</DoorOpenSpeed> <!-- when powered, 0.25*4 = 1x door speed (1/4 autodoor speed) -->
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList>
+      <WoodLog>160</WoodLog>
+    </costList>
+    <costStuffCount>300</costStuffCount>
+    <stuffCategories>
+      <li>Stony</li>
+    </stuffCategories>	
+    <size>(3,2)</size>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>	
+    <graphicData>
+      <texPath>Things/GateDoor_Mover</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(4,3)</drawSize>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Gate_UI</uiIconPath>
+    <building>
+      <soundDoorOpenManual>HeronBlastDoorOpen</soundDoorOpenManual>
+      <soundDoorCloseManual>HeronBlastDoorClose</soundDoorCloseManual>
+    </building>
+    <comps>
+      <li Class="DoorsExpanded.CompProperties_DoorExpanded">
+        <remoteDoor>true</remoteDoor>
+        <doorType>Standard</doorType>
+        <fixedPerspective>true</fixedPerspective>
+        <rotatesSouth>false</rotatesSouth>
+        <doorAsync>
+          <texPath>Things/GateDoor_MoverAsync</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>(4,3)</drawSize>
+          <damageData>
+            <enabled>false</enabled>
+          </damageData>
+        </doorAsync>
+        <doorFrame>
+          <texPath>Things/Gate_Frame</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>CutoutComplex</shaderType>
+          <drawSize>(4,3)</drawSize>
+          <damageData>
+            <enabled>false</enabled>
+          </damageData>
+        </doorFrame>
+        <doorFrameSplit>
+          <texPath>Things/Gate_FrameAsync</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>CutoutComplex</shaderType>
+          <drawSize>(4,3)</drawSize>
+          <damageData>
+            <enabled>false</enabled>
+          </damageData>
+        </doorFrameSplit>
+      </li>
+      <li Class="DoorsExpanded.CompProperties_BreakdownableCustom">
+        <breakdownMTBUnit>2.0</breakdownMTBUnit> <!-- half as likely to breakdown -->
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>JecsTools.PlaceWorker_Outline</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>Stonecutting</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+  </ThingDef>
+
+</Defs>
